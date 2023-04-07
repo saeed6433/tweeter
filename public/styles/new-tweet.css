@@ -1,0 +1,29 @@
+.new-tweet{
+  padding : 0 1em;
+}
+
+#tweet-text {
+  background: transparent;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  border-bottom-color: #090909;
+  color: gray;
+  width: 90%;
+  margin: 0 1em;
+}
+
+ #btnDiv{
+  display: flex;
+  justify-content: space-between;
+  font-family: Bungee, sans-serif;
+  width: 90%;
+  margin: 0 1em;
+ }
+
+button{
+  background-color: #4056a1;
+  font-size: 28px;
+  color: white;
+}

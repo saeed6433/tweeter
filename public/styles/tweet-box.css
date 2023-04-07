@@ -1,0 +1,30 @@
+.tweet-box{
+  display: flex;
+  flex-direction: column;
+  padding : 1em 1em;
+  margin: 1em 1em;
+  border: 3px solid black;
+}
+
+article.tweet-box header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+article.tweet-box footer{
+  border-top-style:solid;
+  border-top-color: 3px black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+article footer i:hover {
+  color: orange;
+}
+
+article:hover{
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+}
+

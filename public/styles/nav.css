@@ -1,0 +1,21 @@
+nav {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  background-color: #4056a1;
+  font-size: 24px;
+  padding: 0 1.5em;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+}
+
+nav span {
+  font-family: Bungee, sans-serif;
+}
+
+nav i {
+  color: red;
+}
