@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log("DOM is ready to be manipulated with jQuery")
 
   $("#tweet-text").on('keyup', function(){
     let len = $(this).val().length;  // to access 'this' with jQuery we need to add $ before this

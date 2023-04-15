@@ -27,3 +27,7 @@ button{
   font-size: 28px;
   color: white;
 }
+
+#error-message{
+  color: red;
+}
