@@ -19,3 +19,9 @@ This repository is the starter code for the project: Students will fork and clon
 - body-parser
 - Chance
 
+## Screenshots
+
+!["Screenshot of tweeter mobile view"](https://github.com/saeed6433/tweeter/blob/master/docs/mobileView.png)
+!["Screenshot of tweeter desktop view"](https://github.com/saeed6433/tweeter/blob/master/docs/desktopView.png)
+!["Screenshot of tweet more than 140 characters"](https://github.com/saeed6433/tweeter/blob/master/docs/extraCharacters.png)
+!["Screenshot of empty box tweeted"](https://github.com/saeed6433/tweeter/blob/master/docs/EmptyTweet.png)
