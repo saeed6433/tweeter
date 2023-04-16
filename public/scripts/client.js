@@ -6,11 +6,15 @@
 
 
 //Preventing XSS with Escaping
+// This method is best suited if the tweet element was created as a string literal (not a jQuery object).
 const escap = function (str) {
   let form = document.createElement("form");
   form.appendChild(document.createTextNode(str));
   return form.innerHTML;
 };
+//Preventing XSS with jQuery:
+//$("<div>").text(textFromUser);
+
 
 $(document).ready(function() {
 
@@ -22,7 +26,7 @@ $(document).ready(function() {
             <div>${tweet.user.handle}</div>
           </header>
           <body> 
-            ${escap(tweet.content.text)} 
+            ${jQescap(tweet.content.text)} 
           </body>
           <footer>
             <div>${timeago.format(tweet.created_at)}</div>
@@ -46,10 +50,11 @@ $(document).ready(function() {
 
 
   const loadtweets = function(){
-    $.ajax('/tweets', { method: 'GET' })
-    .then(function (tweetsJSON) {
+    $.ajax('/tweets', { method: 'GET'})
+    .done(function (tweetsJSON) {
       renderTweets(tweetsJSON)
     })
+    .fail(()=>{alert('GET error')})
   }
 
   loadtweets();

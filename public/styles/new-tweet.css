@@ -31,3 +31,7 @@ button{
 #error-message{
   color: red;
 }
+
+.error-msg{
+  color: red;
+}

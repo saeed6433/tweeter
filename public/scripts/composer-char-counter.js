@@ -7,8 +7,8 @@ $(document).ready(function() {
     let $counter = $(this).parent().find(".counter")  // tweet-text > Parent( which is the Form) > find the counter
 
     if (len > 140){ 
-      $counter.css("color","red")
-    } else { $counter.css("color","gray")}
+      $counter.addClass("error-msg")        // add a css class - recommended
+    } else { $counter.css("color","gray")}  // set a css attr
   })
 
 });

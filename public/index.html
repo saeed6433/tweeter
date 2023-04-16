@@ -21,6 +21,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/formSubmitHandler.js"></script>
 
 
     <!-- Fonts -->
@@ -35,25 +36,7 @@
  
     <!-- AJAX -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script>
-      $(function() {
-        $( "form" ).on( "submit", function( event ) {
-        event.preventDefault();
-        if(!$(this).find('#tweet-text').val()){
-          // return alert("Empty! say something!")
-          $(this).find('#error-message').text("Empty! say something!")
-          return;
-        }
-        else if ($(this).find('#tweet-text').val().length>140) { 
-          // return alert("less than 140 characters please!")
-          $(this).find('#error-message').text("less than 140 characters please!")
-          return;
-        }
-        console.log( $( this ).serialize() );
-        $.post("/tweets", $( this ).serialize())
-        });
-      });
-    </script>
+
   </head>
 
   <body>
