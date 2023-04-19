@@ -20,8 +20,11 @@ This repository is the starter code for the project: Students will fork and clon
 - Chance
 
 ## Screenshots
-
+tweeter mobile view
 !["Screenshot of tweeter mobile view"](https://github.com/saeed6433/tweeter/blob/master/docs/mobileView.png)
+tweeter desktop view
 !["Screenshot of tweeter desktop view"](https://github.com/saeed6433/tweeter/blob/master/docs/desktopView.png)
+error for a tweet with more than 140 characters
 !["Screenshot of tweet more than 140 characters"](https://github.com/saeed6433/tweeter/blob/master/docs/extraCharacters.png)
+error for an empty tweet
 !["Screenshot of empty box tweeted"](https://github.com/saeed6433/tweeter/blob/master/docs/EmptyTweet.png)

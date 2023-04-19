@@ -5,19 +5,20 @@
  */
 
 
-//Preventing XSS with Escaping
-// This method is best suited if the tweet element was created as a string literal (not a jQuery object).
+//Preventing XSS with Escaping:
+// This method is best suited if the tweet element was created as
+// a string literal (not a jQuery object).
+//We can also use Preventing XSS with jQuery 
+// it would be like: $("<div>").text(textFromUser)
+
 const escap = function (str) {
   let form = document.createElement("form");
   form.appendChild(document.createTextNode(str));
   return form.innerHTML;
 };
-//Preventing XSS with jQuery:
-//$("<div>").text(textFromUser);
 
 
 $(document).ready(function() {
-
   const createTweetElement = function(tweet){
     let $tweet = 
       `<article class = "tweet-box">
@@ -26,7 +27,7 @@ $(document).ready(function() {
             <div>${tweet.user.handle}</div>
           </header>
           <body> 
-            ${jQescap(tweet.content.text)} 
+            ${escap(tweet.content.text)} 
           </body>
           <footer>
             <div>${timeago.format(tweet.created_at)}</div>
@@ -41,33 +42,31 @@ $(document).ready(function() {
   }
 
   const renderTweets = function(tweets) {
+      $('#tweets-container').empty();  // is there a better idea to avoid repeating tweets?
       for (let tweet in tweets){
         const $tweet = createTweetElement(tweets[tweet]);
-        // console.log($tweet)
-        $('#tweets-container').prepend($tweet);
+        $('#tweets-container').prepend($tweet);  // to add tweet to the top of others
       }
   }
 
-
-  const loadtweets = function(){
+  const loadTweets = function(){
     $.ajax('/tweets', { method: 'GET'})
     .done(function (tweetsJSON) {
       renderTweets(tweetsJSON)
     })
     .fail(()=>{alert('GET error')})
   }
+  loadTweets();
 
-  loadtweets();
+  
+  $( "form" ).on( "submit", function() {
 
-  $( "form" ).on( "submit", function( event ) {
-    loadtweets();
-    $("#tweet-text").val('');
+    if($(this).find('#tweet-text').val().length <= 140 && $(this).find('#tweet-text').val().length > 0){
+      loadTweets();
+      $("#tweet-text").val(''); // to clear the tweet box
+      $("#error-message").text(''); // to clear the error message
+      $('.counter').text(140); // to return counter to 140 after submitting
+    }
+    
   })
 });
-
-
-// Test / driver code (temporary)
-//const $tweet = createTweetElement(tweetData);
-//console.log($tweet); // to see what it looks like
-//$('#tweets-container').append($tweet); 
-// to add it to the page so we can make sure it's got all the right elements, classes, etc.
